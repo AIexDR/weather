@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<title>Weather</title>
+		<link rel="stylesheet" type="text/css" href="styles/my_style.css">
+		<script src="myApp.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myCtrl">
+			<form name="myForm">
+				<label for="citySelect"> Select city: </label>
+				<select name="citySelect" id="citySelect" ng-model="data.selectedCity" ng-options="option.name for option in data.options">
+				</select>
+			</form>
+			<hr>
+			<tt>model = {{data.selectedCity.name}}</tt><br/>
+			<div>Current Temperature: {{data.weather.main.temp}}</div>
+		</div>
+	</body>
+</html>
